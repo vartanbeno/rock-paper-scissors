@@ -27,7 +27,6 @@ let computerPlay = () => {
 }
 
 let game = (move, computerSelection) => {
-    let currentScore = document.getElementById("currentScore");
 
     if (playerScore == 5 || computerScore == 5) {
         playerScore = 0, computerScore = 0, tie = 0;
