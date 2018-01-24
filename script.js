@@ -64,7 +64,7 @@ let game = (move, computerSelection) => {
         }
         else if (computerSelection == "scissors") {
             computerMove.textContent = "Scissors";
-            computer.textContent == ++computerScore;
+            computer.textContent = ++computerScore;
         }
     }
     else if (move == "scissors"){
@@ -92,11 +92,18 @@ let game = (move, computerSelection) => {
 
 }
 
-let rock = document.getElementById("rock");
-rock.addEventListener("click", function() { game("rock", computerPlay()) });
+// let rock = document.getElementById("rock");
+// rock.addEventListener("click", function() { game("rock", computerPlay()) });
 
-let paper = document.getElementById("paper");
-paper.addEventListener("click", function() { game("paper", computerPlay()) });
+// let paper = document.getElementById("paper");
+// paper.addEventListener("click", function() { game("paper", computerPlay()) });
 
-let scissors = document.getElementById("scissors");
-scissors.addEventListener("click", function() { game("scissors", computerPlay()) });
+// let scissors = document.getElementById("scissors");
+// scissors.addEventListener("click", function() { game("scissors", computerPlay()) });
+
+let buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", function() {
+        game(button.getAttribute("id"), computerPlay());
+    })
+});
