@@ -84,9 +84,11 @@ let game = (move, computerSelection) => {
     }
 
     if (playerScore == 5) {
+        winningMessage.setAttribute("style", "color: rgb(13, 138, 13)");
         winningMessage.textContent = "Congratulations! You won!";
     }
     else if (computerScore == 5) {
+        winningMessage.setAttribute("style", "color: red");
         winningMessage.textContent = "The computer won. :(";
     }
 
@@ -105,5 +107,22 @@ let buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click", function() {
         game(button.getAttribute("id"), computerPlay());
+        button.classList.add("selected");
     })
 });
+
+window.addEventListener("keydown", (e) => {
+    let key = document.querySelector(`button[data-key="${e.keyCode}"`)
+    if (!key) return;
+    game(key.getAttribute("id"), computerPlay());
+    key.classList.add("selected");
+    })
+
+buttons.forEach((button) => {
+    button.addEventListener("transitionend", removeTransition);
+})
+
+function removeTransition(e) {
+    if (e.propertyName !== "transform") return;
+    this.classList.remove("selected");
+}
