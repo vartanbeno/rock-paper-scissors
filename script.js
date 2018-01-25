@@ -112,7 +112,7 @@ buttons.forEach((button) => {
 });
 
 window.addEventListener("keydown", (e) => {
-    let key = document.querySelector(`button[data-key="${e.keyCode}"`)
+    let key = document.querySelector(`button[data-key="${e.keyCode}"`);
     if (!key) return;
     game(key.getAttribute("id"), computerPlay());
     key.classList.add("selected");
