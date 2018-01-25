@@ -9,12 +9,14 @@
     <body>
         <div id="container">
             <p class="instruction">Either click on a button or press R-P-S keys on the keyboard.</p>
-            <button id="rock" data-key="82">Rock</button>
-            <button id="paper" data-key="80">Paper</button>
-            <button id="scissors" data-key="83">Scissors</button>
+            <div id="buttons">
+                <button id="rock" data-key="82">Rock</button>
+                <button id="paper" data-key="80">Paper</button>
+                <button id="scissors" data-key="83">Scissors</button>
+            </div>
             <div id="moves">
-                <p id="player">Player chose: <span id="playerMove"></span></p>
-                <p id="computer">Computer chose: <span id="computerMove"></span></p>
+                <div id="player"><p>Player chose: <span id="playerMove"></span></p></div>
+                <div id="computer"><p>Computer chose: <span id="computerMove"></span></p></div>
             </div>
             <div id="score">
                 <p>Player: <span id="playerScore">0</span></p>

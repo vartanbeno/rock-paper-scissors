@@ -35,36 +35,16 @@ button {
     background-color: rgb(13, 138, 13);
 }
 
-#moves, #score, #winner {
-    text-align: center;
-}
-
 #moves {
-    position: relative;
+    flex-wrap: wrap;
 }
 
 #score {
-    text-align: center;
-}
-
-#moves {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-#score {
-    text-align: center;
-}
-
-#moves p, #score p {
-    display: inline-block;
-    padding: 0px 10px;
-}
-
-p#player {
-    left: 0;
-}
-
-p#computer {
-    position: absolute;
-    right: 0;
+#score p {
+    padding: 0 15px;
 }
